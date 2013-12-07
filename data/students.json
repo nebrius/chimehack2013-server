@@ -1,0 +1,39 @@
+{
+	"fry": {
+		"id": "fry",
+		"username": "fry",
+		"password": "1234",
+		"name": "Phillip J. Fry",
+		"school": "Mars University",
+		"grade": 12,
+		"classname": "Mrs. Mellinger",
+		"level": 2
+	},
+	"bender": {
+		"id": "bender",
+		"name": "Bender Bending Rodriguez",
+		"school": "Mars University",
+		"grade": 10,
+		"classname": "Mrs. Mellinger",
+		"level": 2,
+		"password": "1234"
+	},
+	"leela": {
+		"id": "leela",
+		"password": "1234",
+		"name": "Turanga Leela",
+		"school": "Orphanarium",
+		"grade": 12,
+		"classname": "Life",
+		"level": 4
+	},
+	"amy": {
+		"id": "amy",
+		"password": "1234",
+		"name": "Amy Wong",
+		"school": "Mars University",
+		"grade": 14,
+		"classname": "Professor Farnsworth",
+		"level": 8
+	}
+}

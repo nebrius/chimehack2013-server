@@ -1,0 +1,22 @@
+{
+	"name": "chimehack2013-server",
+	"version": "0.1.0",
+	"description": "A server for our ChimeHack 2013 UNICEF challenge",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/bryan-m-hughes/chimehack2013-server.git"
+	},
+	"author": "Bryan Hughes <bryan@theoreticalideations.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/bryan-m-hughes/chimehack2013-server/issues"
+	},
+	"homepage": "https://github.com/bryan-m-hughes/chimehack2013-server",
+	"dependencies": {
+		"express": "3.4.x"
+	}
+}
