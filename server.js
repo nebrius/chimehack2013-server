@@ -29,6 +29,14 @@ var fs = require('fs'),
 
 	app = express(),
 
+	Logger = require('transport-logger'),
+	logger = new Logger([{
+		destination: path.join(__dirname, 'log'),
+		minLevel: 'trace'
+	}, {
+		minLevel: 'trace'
+	}]),
+
 	PORT = 8080,
 	BATCH_DELAY = 200;
 
@@ -50,7 +58,7 @@ function createEndpoint(name, autoIncrement) {
 
 	// GET /api/<name> -> Array<type>
 	app.get('/api/' + name, function (request, response) {
-		console.log('Getting the list of ' + name + 's');
+		logger.info('Getting the list of ' + name + 's');
 		response.send(200, JSON.stringify(data));
 	});
 
@@ -58,9 +66,9 @@ function createEndpoint(name, autoIncrement) {
 	app.get('/api/' + name + '/:id', function (request, response) {
 		var requestId = request.params.id,
 			entry = data[requestId];
-		console.log('Getting the ' + name + ' with id ' + requestId);
+		logger.info('Getting the ' + name + ' with id ' + requestId);
 		if (!entry) {
-			console.error('Invalid request, ' + name + ' id "' + requestId + '" was not found');
+			logger.error('Invalid request, ' + name + ' id "' + requestId + '" was not found');
 			response.send(400, 'Invalid request');
 			return;
 		}
@@ -72,7 +80,7 @@ function createEndpoint(name, autoIncrement) {
 		app.put('/api/' + name, function (request, response) {
 			var info = request.body,
 				id = ++counter;
-			console.log('Creating new ' + name + ' ' + id);
+			logger.info('Creating new ' + name + ' ' + id);
 
 			// Save the data
 			info.id = id;
@@ -88,7 +96,7 @@ function createEndpoint(name, autoIncrement) {
 	app.put('/api/' + name + '/:id', function (request, response) {
 		var id = request.params.id,
 			info = request.body;
-		console.log((data[id] ? 'Updating' : 'Creating') + ' the ' + name + ' with id ' + id);
+		logger.info((data[id] ? 'Updating' : 'Creating') + ' the ' + name + ' with id ' + id);
 
 		// Save the data
 		data[id] = info;
@@ -115,4 +123,4 @@ createEndpoint('donation', true);
 
 // Start the app
 app.listen(PORT);
-console.log('Server started on port ' + PORT);
+logger.info('Server started on port ' + PORT);

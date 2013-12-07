@@ -17,6 +17,7 @@
 	},
 	"homepage": "https://github.com/bryan-m-hughes/chimehack2013-server",
 	"dependencies": {
-		"express": "3.4.x"
+		"express": "3.4.x",
+		"transport-logger": "0.1.x"
 	}
 }
