@@ -1,1 +1,18 @@
-{}
+{
+	"hermes@pe.com": {
+		"id": "hermes@pe.com",
+		"name": "hermes"
+	},
+	"scruffy@pe.com": {
+		"id": "scruffy@pe.com",
+		"name": "scruffy"
+	},
+	"nibbler@pe.com": {
+		"id": "nibbler@pe.com",
+		"name": "nibbler"
+	},
+	"professor@pe.com": {
+		"id": "professor@pe.com",
+		"name": "professor"
+	}
+}

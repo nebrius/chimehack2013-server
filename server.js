@@ -41,10 +41,12 @@ var fs = require('fs'),
 	BATCH_DELAY = 200;
 
 function createEndpoint(name, autoIncrement) {
-	var counter = 0,
+	var counter,
 		filePath = path.join(__dirname, 'data', name + 's.json'),
 		data = JSON.parse(fs.readFileSync(filePath)),
 		saving;
+
+	counter = parseInt(Object.keys(data).sort().reverse()[0]) + 1;
 
 	function save() {
 		if(!saving) {
@@ -75,7 +77,7 @@ function createEndpoint(name, autoIncrement) {
 		response.send(200, JSON.stringify(entry));
 	});
 
-	// POST /api/students(/:id) type -> type
+	// POST /api/<name>(/:id) type -> type
 	if (autoIncrement) {
 		app.put('/api/' + name, function (request, response) {
 			var info = request.body,
@@ -83,8 +85,8 @@ function createEndpoint(name, autoIncrement) {
 			logger.info('Creating new ' + name + ' ' + id);
 
 			// Save the data
-			info.id = id;
-			data.push(info);
+			info.id = id.toString();
+			data[id] = info;
 			save();
 
 			// Send the message
@@ -96,6 +98,9 @@ function createEndpoint(name, autoIncrement) {
 	app.put('/api/' + name + '/:id', function (request, response) {
 		var id = request.params.id,
 			info = request.body;
+		if (info.id == -1) {
+			info.id = id;
+		}
 		logger.info((data[id] ? 'Updating' : 'Creating') + ' the ' + name + ' with id ' + id);
 
 		// Save the data

@@ -1,7 +1,7 @@
 {
 	"fry": {
 		"id": "fry",
-		"password": "1234",
+		"accessCode": "1234",
 		"name": "Phillip J. Fry",
 		"school": "Mars University",
 		"grade": 12,
@@ -10,16 +10,16 @@
 	},
 	"bender": {
 		"id": "bender",
+		"accessCode": "1234",
 		"name": "Bender Bending Rodriguez",
 		"school": "Mars University",
-		"grade": 10,
+		"grade": 12,
 		"classname": "Mrs. Mellinger",
-		"level": 2,
-		"password": "1234"
+		"level": 4
 	},
 	"leela": {
 		"id": "leela",
-		"password": "1234",
+		"accessCode": "1234",
 		"name": "Turanga Leela",
 		"school": "Orphanarium",
 		"grade": 12,
@@ -28,7 +28,7 @@
 	},
 	"amy": {
 		"id": "amy",
-		"password": "1234",
+		"accessCode": "1234",
 		"name": "Amy Wong",
 		"school": "Mars University",
 		"grade": 14,
