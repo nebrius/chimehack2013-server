@@ -1,4 +1,6 @@
 chimehack2013-server
 ====================
 
-The server for the chimehack2013 app
+Repository for our Chimehack entry for the UNICEF challenge. Submission is at http://chimehack.challengepost.com/submissions/18881-unicef-trick-or-treat-adventures.
+
+Client code can be found at https://github.com/bryan-m-hughes/chimehack2013
